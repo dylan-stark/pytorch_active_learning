@@ -84,6 +84,16 @@ or
  `pip3 install torch`
 However, this sometimes works and sometimes doesn't depending on the versions of various libraries and your exact operating system. That's why `conda` is recommended over `pip` on the pytorch website.
 
+### Docker
+If you have Docker you can use the included `Dockerfile` to build a custom image with the latest [`pytorch/pytorch`](https://hub.docker.com/r/pytorch/pytorch/) image.
+
+```
+make build_docker_image
+make run_docker_image
+```
+
+The image will have the user set to match the current user's UID and GID.
+When run, the current working directory will be mounted so that updates to the data sets and model files will be persisted across runs.
 
 
 ## Data Sources
